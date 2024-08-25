@@ -10,13 +10,14 @@ const App = () => {
 	const handleJsonSubmit = async (json) => {
 		console.log(json);
 
-		Axios.post("http://localhost:4000/bfhl", { data: json }).then(
-			async (data) => {
-				console.log(await data.data);
+		Axios.post(
+			"https://bajaj-finserv-backend-production-9294.up.railway.app/bfhl",
+			{ data: json }
+		).then(async (data) => {
+			console.log(await data.data);
 
-				setResponseData(await data.data);
-			}
-		);
+			setResponseData(await data.data);
+		});
 	};
 
 	const renderResponse = () => {
