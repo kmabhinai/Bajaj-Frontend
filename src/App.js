@@ -46,11 +46,10 @@ export default function Bajaj() {
 
 	const handleFinalSubmit = async () => {
 		try {
+			let data1 = JSON.parse(data);
 			const response = await axios.post(
 				"https://bajaj-finserv-backend-production-9294.up.railway.app/bfhl",
-				{
-					data: JSON.parse(data),
-				}
+				{ data: data1.data }
 			);
 			setApiResponse(response.data);
 		} catch (error) {
